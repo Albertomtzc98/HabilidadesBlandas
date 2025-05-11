@@ -6,7 +6,7 @@ require('dotenv').config();
 
 
 const app = express();
-const port = process.env.DB_PORT;
+const port = 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -29,10 +29,10 @@ db.connect((err) => {
 });
 
 // Crear la base de datos y las tablas
-db.query('CREATE DATABASE IF NOT EXISTS Habilidades_Blandas', (err) => {
+db.query('CREATE DATABASE IF NOT EXISTS railway', (err) => {
   if (err) throw err;
 
-  db.query('USE Habilidades_Blandas', (err) => {
+  db.query('USE railway', (err) => {
     if (err) throw err;
 
     // Tabla de usuarios
